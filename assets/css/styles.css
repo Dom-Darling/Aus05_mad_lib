@@ -4,3 +4,30 @@ main {
     background-position: center;
     background-size: auto;
 }
+
+body { 
+    font-family: Arial, sans-serif; 
+    max-width: 600px; 
+    margin: 20px auto;
+     padding: 0 20px; 
+} 
+label { 
+    display: block; 
+    margin-bottom: 5px;
+ }
+input, button {
+     width: 100%;
+      padding: 5px;
+      margin-bottom: 5px;
+     }
+.definition {
+     font-size: 0.9em; 
+     color: #666;
+      margin-bottom: 10px; 
+    }
+#story {
+     margin-top: 20px; 
+     padding: 10px; 
+     background-color: #f0f0f0; 
+     border-radius: 5px; 
+}
