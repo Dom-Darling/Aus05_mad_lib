@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <meta charset="UTF-8">
     <title>MadLibz Mashup</title>
+    </title>Background Image</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 0 20px; }
-        .input-group { margin-bottom: 15px; }
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 0 20px; } 
         label { display: block; margin-bottom: 5px; }
         input, button { width: 100%; padding: 5px; margin-bottom: 5px; }
         .definition { font-size: 0.9em; color: #666; margin-bottom: 10px; }
@@ -13,34 +14,46 @@
     </style>
 </head>
 <body>
-    <h1>MadLibs Mashup</h1>
-    
-    <div class="input-group">
-        <label for="noun">Noun:</label>
-        <input type="text" id="noun">
-        <div class="definition">
-            A noun is a person, place, or thing. Example: cat, city, book
-        </div>
-    </div>
+    <main>
+        <h1>MadLibs Mashup</h1>
+        <section>
+            <div class="input-group">
+                <label for="noun">Noun:</label>
+                <input type="text" id="noun">
+                <div class="definition">
+                    A noun is a person, place, or thing. Example: cat, city, book
+                </div>
+            </div>
+        
+            <div class="input-group">
+                <label for="verb">Verb:</label>
+                <input type="text" id="verb">
+                <div class="definition">
+                    A verb is an action word. Example: run, sing, write
+                </div>
+            </div>
+        
+            <div class="input-group">
+                <label for="adjective">Adjective:</label>
+                <input type="text" id="adjective">
+                <div class="definition">
+                    An adjective describes a noun. Example: happy, tall, blue
+                </div>
+            </div>
+            
+            <button onclick="createStory()">Create Story</button>
+            <button onclick="saveStory()">Save Story</button>
+            
 
-    <div class="input-group">
-        <label for="verb">Verb:</label>
-        <input type="text" id="verb">
-        <div class="definition">
-            A verb is an action word. Example: run, sing, write
-        </div>
-    </div>
 
-    <div class="input-group">
-        <label for="adjective">Adjective:</label>
-        <input type="text" id="adjective">
-        <div class="definition">
-            An adjective describes a noun. Example: happy, tall, blue
-        </div>
-    </div>
+        </section>
+    </main>
+</body>
+
     
-    <button onclick="createStory()">Create Story</button>
-    <button onclick="saveStory()">Save Story</button>
+
+
+    
     
     <div id="story"></div>
 
