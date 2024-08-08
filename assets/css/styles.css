@@ -1,10 +1,15 @@
 main {
     background-image: url("../img/madlib-background.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top center;
     background-size: auto;
 }
-
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 0;
+    padding-top: 120px;
+}
 body { 
     font-family: Arial, sans-serif; 
     max-width: 600px; 
@@ -30,4 +35,9 @@ input, button {
      padding: 10px; 
      background-color: #f0f0f0; 
      border-radius: 5px; 
+}
+input-group {
+     display: flex; 
+     justify-content: space-between; 
+     margin-bottom: 10px; 
 }
