@@ -42,8 +42,46 @@
 
 
         </section>
+        <section>
+            <h2>Story</h2>
+            <p id="story"></p>
     </main>
+<<<<<<< Updated upstream
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./assets/js/scripts.js"></script> 
+=======
+<!-- remove the extra closing </body> tag -->
+
+    
+    
+    <div id="story"></div>
+
+    <script>
+        function createStory() {
+            var noun = document.getElementById('noun').value;
+            var verb = document.getElementById('verb').value;
+            var adjective = document.getElementById('adjective').value;
+            
+            var story = `The ${adjective} ${noun} likes to ${verb}.`;
+            
+            document.getElementById('story').textContent = story;
+        }
+
+        function saveStory() {
+            var story = document.getElementById('story').textContent;
+            if (!story) {
+                alert("Please create a story first!");
+                return;
+            }
+
+            var blob = new Blob([story], {type: "text/plain;charset=utf-8"});
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "mad_libs_story.txt";
+            a.click();
+        }
+    </script>
+>>>>>>> Stashed changes
 </body>
 </html>
+
