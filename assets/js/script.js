@@ -10,28 +10,46 @@ function createStory() {
     }
 //added the ! operator to the if statement to check if any of the fields are empty.
 //If any of the fields are empty, an alert is displayed, and the function returns early.
-var story = `The ${adjective} ${noun} likes to ${verb}.`;
+let story = `The ${adjective} ${noun} likes to ${verb}.`;
+console.log(story);
     document.getElementById('story').textContent = story;
-    document.getElementById('story-container').style.display = 'block';
+    // document.getElementById('story-container').style.display = 'block';
     if (noun && verb && adjective) {
-        document.getElementById('createStory-button').display = 'block';
+        // document.getElementById('createStory-button').display = 'block';
     }
 //added the && operator to the if statement to check if all the fields are filled.
 }
  
 function saveStory() {
-    var story = document.getElementById('story').textContent;
+    const story = document.getElementById('story').textContent;
+    console.log(story);
     if (!story) {
         alert("Please create a story first!");
         return;
     }
-
-    var blob = new Blob([story], {type: "text/plain;charset=utf-8"});
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "mad_libs_story.txt";
-    a.click();
+//save to local host storage
+    localStorage.setItem("mad_libs_story", story);
 }
+
+// function loadStoryFromStorage() {
+//     var story = localStorage.getItem("mad_libs_story");
+//     if (story) {
+//         document.getElementById('story').textContent = story;
+//     }
+// }
+
+
+
+
+
+    // Save the story to local storage
+    // var blob = new Blob([story], {type: "text/plain;charset=utf-8"});
+    // console.log(blob);
+    // var a = document.createElement("a");
+    // a.href = URL.createObjectURL(blob);
+    // a.download = "mad_libs_story.txt";
+    // a.click();
+
 
 function loadStory() {
     var fileInput = document.getElementById('file-input');
