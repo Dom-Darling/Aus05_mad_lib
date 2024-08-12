@@ -26,18 +26,35 @@ function createStory() {
 }
 
 function saveStory() {
-    var story = document.getElementById('story').textContent;
+    const story = document.getElementById('story').textContent;
+    console.log(story);
     if (!story) {
         alert("Please create a story first!");
         return;
     }
-
-    var blob = new Blob([story], {type: "text/plain;charset=utf-8"});
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "mad_libs_story.txt";
-    a.click();
+//save to local host storage
+    localStorage.setItem("mad_libs_story", story);
 }
+
+// function loadStoryFromStorage() {
+//     var story = localStorage.getItem("mad_libs_story");
+//     if (story) {
+//         document.getElementById('story').textContent = story;
+//     }
+// }
+
+
+
+
+
+    // Save the story to local storage
+    // var blob = new Blob([story], {type: "text/plain;charset=utf-8"});
+    // console.log(blob);
+    // var a = document.createElement("a");
+    // a.href = URL.createObjectURL(blob);
+    // a.download = "mad_libs_story.txt";
+    // a.click();
+
 
 function loadStory() {
     var fileInput = document.getElementById('file-input');
