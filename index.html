@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <meta charset="UTF-8">
     <title>MadLibz Mashup</title>
-    
 </head>
 <body>
     <main>
@@ -15,35 +14,110 @@
             <div class="input-group">
                 <label for="noun">Noun:</label>
                 <input type="text" id="noun">
-                <div class="definition">
-                    A noun is a person, place, or thing. Example: cat, city, book
-                </div>
+                <div class="definition">A noun is a person, place, or thing. Example: cat, city, book</div>
             </div>
-        
+
             <div class="input-group">
                 <label for="verb">Verb:</label>
                 <input type="text" id="verb">
-                <div class="definition">
-                    A verb is an action word. Example: run, sing, write
-                </div>
+                <div class="definition">A verb is an action word. Example: run, sing, write</div>
             </div>
-        
+
             <div class="input-group">
                 <label for="adjective">Adjective:</label>
                 <input type="text" id="adjective">
-                <div class="definition">
-                    An adjective describes a noun. Example: happy, tall, blue
-                </div>
+                <div class="definition">An adjective describes a noun. Example: happy, tall, blue</div>
+            </div>
+
+            <!-- New input fields -->
+            <div class="input-group">
+                <label for="food">Favorite Food:</label>
+                <input type="text" id="food">
+                <div class="definition">Example: pizza, sushi, ice cream</div>
+            </div>
+
+            <div class="input-group">
+                <label for="place">Place:</label>
+                <input type="text" id="place">
+                <div class="definition">Example: park, beach, zoo</div>
+            </div>
+
+            <div class="input-group">
+                <label for="time">Time of Day:</label>
+                <input type="text" id="time">
+                <div class="definition">Example: morning, afternoon, night</div>
+            </div>
+
+            <div class="input-group">
+                <label for="secondNoun">Another Noun:</label>
+                <input type="text" id="secondNoun">
+                <div class="definition">Example: dog, building, tree</div>
+            </div>
+
+            <div class="input-group">
+                <label for="secondVerb">Another Verb:</label>
+                <input type="text" id="secondVerb">
+                <div class="definition">Example: jump, dance, read</div>
+            </div>
+
+            <div class="input-group">
+                <label for="thirdNoun">Third Noun:</label>
+                <input type="text" id="thirdNoun">
+                <div class="definition">Example: bicycle, restaurant, river</div>
+            </div>
+
+            <div class="input-group">
+                <label for="thirdVerb">Third Verb:</label>
+                <input type="text" id="thirdVerb">
+                <div class="definition">Example: swim, explore, laugh</div>
             </div>
            
             <button onclick="createStory()">Create Story</button>
             <button onclick="saveStory()">Save Story</button>
-            
-
-
+        </section>
+        <section>
+            <h2>Story</h2>
+            <p id="story"></p>
         </section>
     </main>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./assets/js/scripts.js"></script> 
+
+    <script>
+        function createStory() {
+            var noun = document.getElementById('noun').value;
+            var verb = document.getElementById('verb').value;
+            var adjective = document.getElementById('adjective').value;
+            var food = document.getElementById('food').value;
+            var place = document.getElementById('place').value;
+            var time = document.getElementById('time').value;
+            var secondNoun = document.getElementById('secondNoun').value;
+            var secondVerb = document.getElementById('secondVerb').value;
+            var thirdNoun = document.getElementById('thirdNoun').value;
+            var thirdVerb = document.getElementById('thirdVerb').value;
+
+            var story = `Once upon a time, in a faraway land, there lived a ${adjective} ${noun}. Every day, this ${noun} would ${verb} in the most peculiar way. It was known far and wide for its love of ${food}, which it would always eat at the famous ${place} during the ${time}. This was no ordinary ${noun}, for it had a special friend, a ${secondNoun}, with whom it would often ${secondVerb}. Together, they would embark on exciting adventures, where they would encounter a mysterious ${thirdNoun}. This ${thirdNoun} had a habit of ${thirdVerb} whenever it was excited, which made their adventures all the more thrilling. In the end, the ${noun} and its friends would always return home, happy and content, knowing that they had made the world just a little bit more interesting. And so, their story continues, full of wonder, joy, and a little bit of magic.`;
+
+
+            document.getElementById('story').textContent = story;
+        }
+
+        function saveStory() {
+            var story = document.getElementById('story').textContent;
+            if (!story) {
+                alert("Please create a story first!");
+                return;
+            }
+
+            var blob = new Blob([story], {type: "text/plain;charset=utf-8"});
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = "mad_libs_story.txt";
+            a.click();
+        }
+    </script>
 </body>
 </html>
+
+
