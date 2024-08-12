@@ -3,22 +3,28 @@ function createStory() {
     var noun = document.getElementById('noun').value.trim();
     var verb = document.getElementById('verb').value.trim();
     var adjective = document.getElementById('adjective').value.trim();
-//added .trim to the end to ensure that whitespace-only inputs are treated as empty fields.
-    if (!noun || !verb || !adjective) {
+    var food = document.getElementById('food').value.trim();
+    var place = document.getElementById('place').value.trim();
+    var time = document.getElementById('time').value.trim();
+    var secondNoun = document.getElementById('secondNoun').value.trim();
+    var secondVerb = document.getElementById('secondVerb').value.trim();
+    var thirdNoun = document.getElementById('thirdNoun').value.trim();
+    var thirdVerb = document.getElementById('thirdVerb').value.trim();
+
+    // Check if all fields are filled
+    if (!noun || !verb || !adjective || !food || !place || !time || !secondNoun || !secondVerb || !thirdNoun || !thirdVerb) {
         alert("Please fill in all fields!");
         return;
     }
-//added the ! operator to the if statement to check if any of the fields are empty.
-//If any of the fields are empty, an alert is displayed, and the function returns early.
-var story = `The ${adjective} ${noun} likes to ${verb}.`;
+
+    // Create a longer and more detailed story
+    var story = `Once upon a time in ${place}, there was a ${adjective} ${noun} who loved to ${verb} every ${time}. One day, after enjoying some ${food}, the ${noun} met a ${secondNoun} who wanted to ${secondVerb}. They decided to go on an adventure together. During their journey, they encountered a ${thirdNoun} that wanted to ${thirdVerb}. The day ended with everyone enjoying a great feast and sharing their stories. It was a day to remember!`;
+
+    // Display the story
     document.getElementById('story').textContent = story;
     document.getElementById('story-container').style.display = 'block';
-    if (noun && verb && adjective) {
-        document.getElementById('createStory-button').display = 'block';
-    }
-//added the && operator to the if statement to check if all the fields are filled.
 }
- 
+
 function saveStory() {
     var story = document.getElementById('story').textContent;
     if (!story) {
