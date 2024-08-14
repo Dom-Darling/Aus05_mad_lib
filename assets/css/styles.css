@@ -26,7 +26,8 @@ input, button {
       margin-bottom: 5px;
      }
 .definition {
-     font-size: 0.9em; 
+     text-wrap: flex;
+     font-size: 1.0rem; 
      color: #666;
       margin-bottom: 10px; 
     }
@@ -37,7 +38,7 @@ input, button {
      border-radius: 5px; 
 }
 input-group {
-     display: flex; 
+     display: flex;
      justify-content: space-between; 
      margin-bottom: 10px; 
 }
