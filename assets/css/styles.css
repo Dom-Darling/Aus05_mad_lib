@@ -1,8 +1,16 @@
+body{
+     background-image: url("../img/Slide3.PNG");
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+}
 main {
     background-image: url("../img/madlib-background.png");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: auto;
+    background-color: white;
+     padding: 60px 40px;
 }
 h1 {
     text-align: center;
